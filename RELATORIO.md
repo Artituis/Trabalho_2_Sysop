@@ -1,8 +1,8 @@
 # Relatório — SimES: simulador de E/S e de sistema de arquivos
 
-**Integrantes:** [nome completo de TODOS os integrantes, separados por vírgula]
+**Integrantes:** Artur Santos Lampert
 
-**Repositório:** [https://github.com/usuario/repositorio — o repositório público do grupo]
+**Repositório:** https://github.com/Artituis/Trabalho_2_Sysop
 
 <!--
 INSTRUÇÕES DO MODELO (apaguem este bloco antes de entregar)
@@ -41,11 +41,28 @@ Resultado dos testes automáticos (`python3 executar.py testes`): [cole a últim
 
 ### N2 — Subsistema de E/S
 
-**Onde:** [arquivos e funções]
+**Onde:** 
 
-**Decisões:** [como implementaram SSTF, SCAN, polling e interrupção; casos especiais]
+Polling e interrupção 
+Arquivo: `simes/es/cpu.py`
+Função: `custo_cpu`
 
-**Dificuldades:** [o que deu trabalho e como resolveram]
+
+SSTF e SCAN
+Arquivo: `simes/es/escalonadores.py`
+Função: SSTF.escolher(), e SCAN.escolher()
+
+**Decisões:** 
+
+SSTF, checa qual a requisição mais proxima, como a fila ja está na ordem de chegada a procura com min ja leva em conta o desempate. se ele estiver em outro cilindro troca.
+
+SCAN: primeiro ve se não tem nenhuma requisição que está a frente, se não tiver, passa pelo final e troca de direção, procurando então pela requisição mais próxima.
+
+pooling: demora o tempo da requisição
+
+interrupção: cada bloco de memoria acessado gera uma interrupção que demora o tempo do SO resolver a interrupção e de ler o bloco de memoria.
+
+**Dificuldades:** entender o phyton e como implementar a solução, isso foi resolvido com o uso da IA.
 
 ### N3 — Sistema de arquivos
 
@@ -295,10 +312,9 @@ estruturas do ext4, do NTFS e do APFS; travas mandatórias do Windows × consult
 
 ## 8. Declaração de autoria e uso de IA
 
-**Quem fez o quê:** [divisão do trabalho entre os integrantes]
-
 **Uso de ferramentas de IA:**
 
 | Ferramenta | Finalidade | Onde foi usada (arquivos ou seções) |
 |---|---|---|
-| [ex.: nenhuma] | [ ] | [ ] |
+| Codex (GPT-6 Luna Medium) | Verificar raciocinio depois de tentativa | cpu.py |
+| Codex (GPT-6 Luna Medium) | Criação do código do SSTF e do SCAN | escalonadores.py |

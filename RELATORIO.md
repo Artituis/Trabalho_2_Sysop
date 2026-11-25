@@ -340,3 +340,4 @@ estruturas do ext4, do NTFS e do APFS; travas mandatórias do Windows × consult
 |---|---|---|
 | Codex (GPT-6 Luna Medium) | Verificar raciocinio depois de tentativa | cpu.py |
 | Codex (GPT-6 Luna Medium) | Criação do código do SSTF e do SCAN | escalonadores.py |
+| Codex (GPT-6 Luna Medium) | criação das funções | sistema.py |

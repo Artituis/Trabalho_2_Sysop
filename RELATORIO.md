@@ -62,15 +62,37 @@ pooling: demora o tempo da requisição
 
 interrupção: cada bloco de memoria acessado gera uma interrupção que demora o tempo do SO resolver a interrupção e de ler o bloco de memoria.
 
-**Dificuldades:** entender o phyton e como implementar a solução, isso foi resolvido com o uso da IA.
+**Dificuldades:** entender o python e como implementar a solução, isso foi resolvido com o uso da IA.
 
 ### N3 — Sistema de arquivos
 
-**Onde:** [arquivos e funções]
+**Onde:** 
+
+Arquivo: `simes/arquivos/sistema.py`
+
+SistemaArquivos.resolver()
+               .mkdir()
+               .create()
+               .open()
+               .read()
+               .write()
+               .seek()
+               .close()
+               .unlink()
 
 **Decisões:** [resolução de caminhos, tabelas de arquivos abertos, leitura e escrita, unlink com arquivo aberto]
 
-**Dificuldades:** [ ]
+Resolução de caminhos: caminho é percorrido a partir da raiz, e cada entra da verifica se é um diretório e se tem o FCB checa pra ver se tem links simbolicos.
+
+Tabela de arquivos: esta implementada como na descrição com a posição e o modo.
+
+Leitura: é validado o tamanho pedido e o modo, verifica a trava, lê os blocos que cobrem o intervalo solicitado e avança a posição.
+
+Escrita: valida a quantidade, o handle e o modo; depois garante que há blocos suficientes, grava os blocos que cobrem o intervalo e atualiza posição e metadados.
+
+Unlink: ele não resolve o diretorio pai, só remove o link, não o alvo.
+
+**Dificuldades:** implementação e entender como as funções auxiliares funcionavam.
 
 ### [M? — nome do módulo]
 
